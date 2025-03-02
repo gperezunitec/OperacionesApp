@@ -8,44 +8,46 @@ using CommunityToolkit.Mvvm.Input;
 
 namespace OperacionesApp.ViewModels
 {
-    class OperacionesViewModel:ObservableObject
+    internal partial class OperacionesViewModel:ObservableObject
     {
         [ObservableProperty]
-        public double ladoCuadrado { get; set; }
+        public double ladoCuadrado;
 
         [ObservableProperty]
-        public double radioCirculo { get; set; }
+        public double radioCirculo;
 
         [ObservableProperty]
-        public double baseRectangulo { get; set; }
+        public double baseRectangulo;
 
         [ObservableProperty]
-        public double alturaRectangulo { get; set; }
+        public double alturaRectangulo;
 
         [RelayCommand]
-        public double areaCuadrado(double ladoCuadrado)
+        private double AreaCuadrado()
         {
-            ladoCuadrado=this.ladoCuadrado;
-
             return ladoCuadrado * ladoCuadrado;
         }
 
         [RelayCommand]
-        public double areaCirculo(double radioCirculo)
+        private double AreaCirculo()
         {
-            radioCirculo = this.radioCirculo;
-
             return 3.14*radioCirculo*radioCirculo;
         }
 
         [RelayCommand]
-        public double areaRectangulo(double baseRectangulo, double alturaRectangulo)
+        private double AreaRectangulo()
         {
-            baseRectangulo = this.baseRectangulo;
-            alturaRectangulo = this.alturaRectangulo;
 
             return baseRectangulo*alturaRectangulo;
         }
+
+
+        private void Alerta(string Titulo, string Mensaje)
+        {
+            MainThread.BeginInvokeOnMainThread(async () => await App.Current!.MainPage!.DisplayAlert(Titulo, Mensaje, "Aceptar"));
+        }
+
+
 
     }
 }
