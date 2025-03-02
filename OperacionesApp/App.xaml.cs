@@ -1,4 +1,6 @@
-﻿namespace OperacionesApp
+﻿using OperacionesApp.Views;
+
+namespace OperacionesApp
 {
     public partial class App : Application
     {
@@ -6,7 +8,7 @@
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new OperacionesView();
         }
     }
 }

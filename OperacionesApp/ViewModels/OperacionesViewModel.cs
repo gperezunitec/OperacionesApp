@@ -41,10 +41,11 @@ namespace OperacionesApp.ViewModels
             try
             {
                 cuadradoArea= ladoCuadrado * ladoCuadrado;
+                Alerta("ERROR", "Cuadrado");
             }
             catch (Exception ex)
             {
-                Alerta("ERROR", ex.Message);;
+                Alerta("ERROR", ex.Message);
                 throw;
             }
             
@@ -58,6 +59,7 @@ namespace OperacionesApp.ViewModels
             try
             {
                 circuloArea = 3.14 * radioCirculo * radioCirculo;
+                Alerta("ERROR", "Circulo");
             }
             catch (Exception ex)
             {
@@ -76,6 +78,7 @@ namespace OperacionesApp.ViewModels
             try
             {
                 rectanguloArea = baseRectangulo * alturaRectangulo;
+                Alerta("ERROR", "Rectangulo");
             }
             catch (Exception ex)
             {
