@@ -34,14 +34,20 @@ namespace OperacionesApp.ViewModels
         [ObservableProperty]
         private double rectanguloArea;
 
+        private string CalculocuadradoArea;
+        private string CalculocirculoArea;
+        private string CalculorectanguloArea;
+
         [RelayCommand]
         private void AreaCuadrado()
+
         {
 
             try
             {
                 cuadradoArea= ladoCuadrado * ladoCuadrado;
-                Alerta("ERROR", "Cuadrado");
+                CalculocuadradoArea=cuadradoArea.ToString();
+                Alerta("ERROR", CalculocuadradoArea);
             }
             catch (Exception ex)
             {
@@ -59,7 +65,8 @@ namespace OperacionesApp.ViewModels
             try
             {
                 circuloArea = 3.14 * radioCirculo * radioCirculo;
-                Alerta("ERROR", "Circulo");
+                CalculocirculoArea = circuloArea.ToString();
+                Alerta("ERROR", CalculocirculoArea);
             }
             catch (Exception ex)
             {
@@ -78,7 +85,8 @@ namespace OperacionesApp.ViewModels
             try
             {
                 rectanguloArea = baseRectangulo * alturaRectangulo;
-                Alerta("ERROR", "Rectangulo");
+                CalculorectanguloArea = rectanguloArea.ToString();
+                Alerta("ERROR", CalculorectanguloArea);
             }
             catch (Exception ex)
             {
