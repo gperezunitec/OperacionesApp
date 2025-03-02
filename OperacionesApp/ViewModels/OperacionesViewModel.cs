@@ -35,7 +35,18 @@ namespace OperacionesApp.ViewModels
         [RelayCommand]
         private void AreaCuadrado()
         {
-            cuadradoArea= ladoCuadrado * ladoCuadrado;
+
+            try
+            {
+                cuadradoArea= ladoCuadrado * ladoCuadrado;
+            }
+            catch (Exception ex)
+            {
+                Alerta("ERROR", ex.Message);;
+                throw;
+            }
+            
+            
         }
         
         [RelayCommand]
@@ -57,7 +68,17 @@ namespace OperacionesApp.ViewModels
             MainThread.BeginInvokeOnMainThread(async () => await App.Current!.MainPage!.DisplayAlert(Titulo, Mensaje, "Aceptar"));
         }
 
-
+        [RelayCommand]
+        private void Limpiar()
+        {
+            ladoCuadrado = 0;
+            radioCirculo = 0;
+            baseRectangulo = 0;
+            alturaRectangulo = 0;
+            cuadradoArea = 0;
+            circuloArea = 0;
+            rectanguloArea = 0;
+        }
 
     }
 }

@@ -1,26 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             
-             x:Class="OperacionesApp.MainPage">
+            x:Class="OperacionesApp.MainPage">
 
                 <ContentPage Title="Area del cuadrado">
-                    <StackLayout Margin="10">
-                        <Label Text="Ingrese el valor del lado del cuadrado: " Margin="10"></Label>
-                        <Entry Text="{}" Keyboard="Numeric" Margin="10"></Entry>
+                            <VerticalStackLayout Margin="10">
+                                <Label Text="Ingrese el valor del lado del cuadrado: " Margin="10"></Label>
+                                <Entry Text="{Binding LadoCuadrado}" Keyboard="Numeric" Margin="10"></Entry>
 
-                        <Label Text="Resultado: " Margin="10"></Label>
-                        <Entry Text="{}" Margin="10"></Entry>
-                        
-                        <Button Text="Calcular" Background="Green" Command="{Binding CalcularCommand}" Margin="10"></Button>
-                        <Button Text="Limpiar" Background="Red" Command="{Binding LimpiarCommand}" Margin="10"></Button>
-                    </StackLayout>
+                                <Label Text="Resultado: " Margin="10"></Label>
+                                <Entry Text="{Binding CuadradoArea}" Margin="10" IsReadOnly="True"></Entry>
+
+                                <Button Text="Calcular" Background="Green" Command="{Binding AreaCuadradoCommand}" Margin="10"/>
+                                <Button Text="Limpiar" Background="Red" Command="{Binding LimpiarCommand}" Margin="10"/>
+                     </VerticalStackLayout>
                 </ContentPage>
 
                 <ContentPage Title="Area del círculo">
                     <StackLayout Margin="10">
                         <Label Text="Ingrese el valor del radio del circulo: " Margin="10"></Label>
-                        <Entry Text="" Keyboard="Numeric" Margin="10"></Entry>
+                        <Entry Text="{Binding RadioCirculo}" Keyboard="Numeric" Margin="10"></Entry>
+                        
+                        <Label Text="Resultado: " Margin="10"></Label>
+                        <Entry Text="{Binding CirculoArea}" Margin="10"></Entry>
                         
                         <Button Text="Calcular" Background="Green" Command="{Binding CalcularCommand}" Margin="10"></Button>
                         <Button Text="Limpiar" Background="Red" Command="{Binding LimpiarCommand}" Margin="10"></Button>
@@ -31,13 +34,16 @@
 
                     <StackLayout Margin="10">
                         <Label Text="Ingrese el valor del la base del rectangulo: " Margin="10"></Label>
-                        <Entry Text="" Keyboard="Numeric" Margin="10"></Entry>
+                        <Entry Text="{Binding BaseRectangulo}" Keyboard="Numeric" Margin="10"></Entry>
                         
                         <Label Text="Ingrese el valor del la altura del rectangulo: " Margin="10"></Label>
-                        <Entry Text="" Keyboard="Numeric" Margin="10"></Entry>
+                        <Entry Text="{Binding AlturaRectangulo}" Keyboard="Numeric" Margin="10"></Entry>
                         
-                        <Button Text="Calcular" Background="Green" Command="{Binding CalcularCommand}" Margin="10"></Button>
-                        <Button Text="Limpiar" Background="Red" Command="{Binding LimpiarCommand}" Margin="10"></Button>
+                        <Label Text="Resultado: " Margin="10"></Label>
+                        <Entry Text="{Binding RectanguloArea}" Margin="10"></Entry>
+                        
+                        <Button Text="Calcular" Background="Green" Command="{Binding CalcularCommand}" Margin="10"/>
+            <Button Text="Limpiar" Background="Red" Command="{Binding LimpiarCommand}" Margin="10"></Button>
                     </StackLayout>
 
                 </ContentPage>
