@@ -8,37 +8,47 @@ using CommunityToolkit.Mvvm.Input;
 
 namespace OperacionesApp.ViewModels
 {
-    internal partial class OperacionesViewModel:ObservableObject
+    public partial class OperacionesViewModel:ObservableObject
     {
         [ObservableProperty]
-        public double ladoCuadrado;
+        private double ladoCuadrado;
 
         [ObservableProperty]
-        public double radioCirculo;
+        private double radioCirculo;
 
         [ObservableProperty]
-        public double baseRectangulo;
+        private double baseRectangulo;
 
         [ObservableProperty]
-        public double alturaRectangulo;
+        private double alturaRectangulo;
+        
+        
+        [ObservableProperty]
+        private double cuadradoArea;
+        
+        [ObservableProperty]
+        private double circuloArea;
+        
+        [ObservableProperty]
+        private double rectanguloArea;
 
         [RelayCommand]
-        private double AreaCuadrado()
+        private void AreaCuadrado()
         {
-            return ladoCuadrado * ladoCuadrado;
+            cuadradoArea= ladoCuadrado * ladoCuadrado;
         }
-
+        
         [RelayCommand]
-        private double AreaCirculo()
+        private void AreaCirculo()
         {
-            return 3.14*radioCirculo*radioCirculo;
+            circuloArea =3.14*radioCirculo*radioCirculo;
         }
-
+        
         [RelayCommand]
-        private double AreaRectangulo()
+        private void AreaRectangulo()
         {
-
-            return baseRectangulo*alturaRectangulo;
+        
+            rectanguloArea= baseRectangulo*alturaRectangulo;
         }
 
 
