@@ -10,6 +10,8 @@ namespace OperacionesApp.ViewModels
 {
     public partial class OperacionesViewModel:ObservableObject
     {
+
+
         [ObservableProperty]
         private double ladoCuadrado;
 
@@ -52,14 +54,38 @@ namespace OperacionesApp.ViewModels
         [RelayCommand]
         private void AreaCirculo()
         {
-            circuloArea =3.14*radioCirculo*radioCirculo;
+
+            try
+            {
+                circuloArea = 3.14 * radioCirculo * radioCirculo;
+            }
+            catch (Exception ex)
+            {
+                Alerta("ERROR", ex.Message); 
+                throw;
+            }
+
+
+            
         }
         
         [RelayCommand]
         private void AreaRectangulo()
         {
-        
-            rectanguloArea= baseRectangulo*alturaRectangulo;
+
+            try
+            {
+                rectanguloArea = baseRectangulo * alturaRectangulo;
+            }
+            catch (Exception ex)
+            {
+                Alerta("ERROR", ex.Message);
+                throw;
+            }
+
+
+
+            
         }
 
 
