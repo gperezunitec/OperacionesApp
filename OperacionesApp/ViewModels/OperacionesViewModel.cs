@@ -3,17 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 
 namespace OperacionesApp.ViewModels
 {
-    class OperacionesViewModel
+    class OperacionesViewModel:ObservableObject
     {
-
+        [ObservableProperty]
         public double ladoCuadrado { get; set; }
+
+        [ObservableProperty]
         public double radioCirculo { get; set; }
+
+        [ObservableProperty]
         public double baseRectangulo { get; set; }
+
+        [ObservableProperty]
         public double alturaRectangulo { get; set; }
 
+        [RelayCommand]
         public double areaCuadrado(double ladoCuadrado)
         {
             ladoCuadrado=this.ladoCuadrado;
@@ -21,6 +30,7 @@ namespace OperacionesApp.ViewModels
             return ladoCuadrado * ladoCuadrado;
         }
 
+        [RelayCommand]
         public double areaCirculo(double radioCirculo)
         {
             radioCirculo = this.radioCirculo;
@@ -28,6 +38,7 @@ namespace OperacionesApp.ViewModels
             return 3.14*radioCirculo*radioCirculo;
         }
 
+        [RelayCommand]
         public double areaRectangulo(double baseRectangulo, double alturaRectangulo)
         {
             baseRectangulo = this.baseRectangulo;

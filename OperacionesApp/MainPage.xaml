@@ -6,7 +6,7 @@
                 <ContentPage Title="Area del cuadrado">
                     <StackLayout Margin="10">
                         <Label Text="Ingrese el valor del lado del cuadrado: " Margin="10"></Label>
-                        <Entry Text="" Keyboard="Numeric" Margin="10"></Entry>
+                        <Entry Text="{Binding ladoCuadrado}" Keyboard="Numeric" Margin="10"></Entry>
                         <Button Text="Calcular" Background="Green" Command="{Binding CalcularCommand}" Margin="10"></Button>
                         <Button Text="Limpiar" Background="Red" Command="{Binding LimpiarCommand}" Margin="10"></Button>
                     </StackLayout>
